@@ -1,0 +1,166 @@
+body {
+    font-family: "plus jakarta sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color: rgb(220, 61, 61);
+    font-size: 2rem;
+}
+
+.dark-mode .nav-link {
+    color: white !important;
+}
+
+.dark-mode .gname {
+    color: white !important;
+}
+
+.dark-mode .f-info {
+    background-color: #000000;
+}
+
+.dark-mode .f-info-links a {
+    color: white !important;
+}
+
+.dark-mode .f-info-links a:hover {
+    text-decoration: underline !important;
+}
+
+.f-info-links a {
+    text-decoration: none !important;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline !important;
+}
+
+.f-info-links, .f-info-socials, .f-info-brand {
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    gap: 1rem;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+.f-info-socials i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.f-info {
+    background-color: #f1eded;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 8rem;
+    text-align: center;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+.card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 20px;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+.add-btn, .edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.show-image {
+    height: 45vh;
+}
+
+.btns {
+    display: flex;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.review-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text {
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.card-footer {
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .gname {
+        margin-top: 8px;
+    }
+
+    .navbar-nav .nav-link {
+        color: black !important;
+    }
+}

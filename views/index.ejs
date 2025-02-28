@@ -1,0 +1,177 @@
+<% layout('/layouts/boilerplate') %>
+    <!-- <h1>All Listings</h1> -->
+    <style>
+        #filters {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    
+        .filter {
+            text-align: center;
+            margin-right: 2rem;
+            margin-top: 2rem;
+            opacity: 0.7;
+        }
+    
+        .filter:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+    
+        .filter p {
+            font-size: 0.8rem;
+        }
+    
+        .Scolor {
+            background-color: white;
+            transition: background-color 0.3s ease-in-out;
+        }
+    
+        .Screen_color {
+            border: 1px solid black;
+            border-radius: 1rem;
+            height: 3rem;
+            padding: 1rem;
+            margin-left: 8rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+    
+        /* Default Light Mode */
+        body {
+            background-color: white;
+            color: black;
+            transition: background-color 0.3s ease-in-out;
+        }
+    
+        .navbar {
+            background-color: white !important;
+            color: black !important;
+            transition: background-color 0.3s ease-in-out;
+        }
+    
+        .footer {
+            background-color: white !important;
+            color: black !important;
+            transition: background-color 0.3s ease-in-out;
+        }
+    
+        /* Dark Mode */
+        .dark-mode {
+            background-color: black !important;
+            color: white !important;
+        }
+    
+        .dark-mode-nav {
+            background-color: black !important;
+            color: white !important;
+            border-bottom: 1px solid white;
+        }
+    
+        .dark-mode-footer {
+            background-color: black !important;
+            color: white !important;
+            border-top: 1px solid white;
+        }
+        .dark-mode-newpage {
+            background-color: black !important;
+            color: white !important;
+            border-top: 1px solid white;
+        }
+    </style>
+<div id="filters">
+    <div class="filter">
+       <div> <i class="fa-solid fa-fire"></i></div>
+       <p> Trending </p>
+    </div>
+    <div class="filter">
+       <div><i class="fa-solid fa-bed"></i></div>
+       <p> Rooms </p>
+    </div>
+    <div class="filter">
+       <div> <i class="fa-solid fa-mountain-city"></i></div>
+       <p> Iconic Cities </p>
+    </div>
+    <div class="filter">
+       <div><i class="fa-solid fa-mountain"></i></div>
+       <p> mountains </p>
+    </div>
+    <div class="filter">
+       <div> <i class="fa-solid fa-person-swimming"></i></div>
+       <p> Amazing Pools </p>
+    </div>
+    <div class="filter">
+       <div><i class="fa-solid fa-campground"></i></div>
+       <p> Camping </p>
+    </div>
+    <div class="filter">
+       <div><i class="fa-solid fa-cow"></i></div>
+       <p> Farms </p>
+    </div>
+    <div class="filter">
+       <div> <i class="fa-solid fa-igloo"></i></div>
+       <p> Artic  </p>
+    </div>
+    <div class="filter">
+       <div><i class="fa-solid fa-cow"></i></div>
+       <p> Domes </p>
+    </div>
+    <div class="filter">
+       <div> <i class="fa-solid fa-ship"></i></div>
+       <p> Botes  </p>
+    </div>
+<div class="Screen_color">
+    <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">display total after Taxes</label>
+      </div>
+</div>
+
+
+</div>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 ">
+        <% for(let listing of allListings) { %>
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+                <div class="card col ">
+                    <img src="<%= listing.image.url %>" class="card-img-top" alt="image" height="320px">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                        <b><%= listing.title %></b>
+                        &#8377;<%= listing.price.toLocaleString("en-IN") %>\Night
+                        <i class="tax-info">&nbsp; &nbsp; +18% GST </i>
+                    </div>
+                </div>
+            </a>
+            <%}%>
+    </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+
+    taxSwitch.addEventListener("click", () => {
+        let body = document.body;
+        let navbar = document.querySelector(".navbar"); 
+        let footer = document.querySelector(".footer"); 
+        let newpage = document.querySelector("new");
+
+        // Toggle dark mode classes
+        body.classList.toggle("dark-mode");
+        navbar.classList.toggle("dark-mode-nav");
+        footer.classList.toggle("dark-mode-footer");
+        newpage.classList.toggle("dark-mode-newpage");
+        if (newpage) {
+            newpage.classList.toggle("dark-mode-newpage");
+        }
+        // Remove Bootstrap default background color
+        if (navbar.classList.contains("dark-mode-nav")) {
+            navbar.classList.remove("bg-light");  
+        } else {
+            navbar.classList.add("bg-light");  
+        }
+    });
+});
+</script>
