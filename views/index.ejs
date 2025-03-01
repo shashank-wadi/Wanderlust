@@ -1,5 +1,4 @@
 <% layout('/layouts/boilerplate') %>
-    <!-- <h1>All Listings</h1> -->
     <style>
         #filters {
             margin-top: 1rem;
@@ -32,15 +31,14 @@
         .Screen_color {
             border: 1px solid black;
             border-radius: 1rem;
-            height: 3rem;
-            padding: 1rem;
-            margin-left: 8rem;
+            height: 2.5rem;
+            width: 170px;
+            margin-left:200px;
             display: flex;
-            align-items: center;
+            justify-content: center;
+            padding-top: 6px;
             cursor: pointer;
         }
-    
-        /* Default Light Mode */
         body {
             background-color: white;
             color: black;
@@ -59,7 +57,6 @@
             transition: background-color 0.3s ease-in-out;
         }
     
-        /* Dark Mode */
         .dark-mode {
             background-color: black !important;
             color: white !important;
@@ -99,34 +96,10 @@
        <div><i class="fa-solid fa-mountain"></i></div>
        <p> mountains </p>
     </div>
-    <div class="filter">
-       <div> <i class="fa-solid fa-person-swimming"></i></div>
-       <p> Amazing Pools </p>
-    </div>
-    <div class="filter">
-       <div><i class="fa-solid fa-campground"></i></div>
-       <p> Camping </p>
-    </div>
-    <div class="filter">
-       <div><i class="fa-solid fa-cow"></i></div>
-       <p> Farms </p>
-    </div>
-    <div class="filter">
-       <div> <i class="fa-solid fa-igloo"></i></div>
-       <p> Artic  </p>
-    </div>
-    <div class="filter">
-       <div><i class="fa-solid fa-cow"></i></div>
-       <p> Domes </p>
-    </div>
-    <div class="filter">
-       <div> <i class="fa-solid fa-ship"></i></div>
-       <p> Botes  </p>
-    </div>
-<div class="Screen_color">
+   <div class="Screen_color">
     <div class="form-check-reverse form-switch">
         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-        <label class="form-check-label" for="flexSwitchCheckDefault">display total after Taxes</label>
+        <label class="form-check-label" for="flexSwitchCheckDefault">Change Theme</label>
       </div>
 </div>
 
